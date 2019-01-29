@@ -1,0 +1,78 @@
+<section class="section hero is-info" id="contact">
+  <div class="hero-body">
+    <div class="container">
+      <div class="section-heading" data-aos="flip-down" data-aos-duration="1000">
+        <h3 class="title is-2">Contact</h3>
+        <h4 class="subtitle is-5">Get in touch</h4>
+      </div>
+      <div class="columns">
+        <div class="column is-6 is-offset-3">
+          <div class="box" data-aos="zoom-in-up" data-aos-duration="1000">
+            <form class="toggle-disabled" id="contact-form" action="#" method="post">
+              <div class="field">
+                <label class="label">Name</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input is-info" id="name" name="name" type="text" placeholder="John Doe">
+                  <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input is-info" id="email" name="email" type="text" placeholder="name@example.com">
+                  <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Subject</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input is-info" id="subject" name="subject" type="text" placeholder="Hello">
+                  <span class="icon is-small is-left"><i class="fas fa-pen"></i></span>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Message</label>
+                <div class="control">
+                  <textarea class="textarea is-info" id="text" name="text" placeholder="Message"></textarea>
+                </div>
+              </div>
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-primary">Send</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modal-success">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <article class="message is-info">
+        <div class="message-header">
+          <strong><i class="fas fa-check-circle"></i> Thanks!</strong>
+          <button class="delete" id="close-success" aria-label="delete"></button>
+        </div>
+        <div class="message-body">
+          Your message has been sent.
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="modal" id="modal-error">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <article class="message is-danger">
+        <div class="message-header">
+          <strong><i class="fas fa-exclamation-triangle"></i> Oops!</strong>
+          <button class="delete" id="close-error" aria-label="delete"></button>
+        </div>
+        <div class="message-body">
+          Something went wrong. Please try again later.
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
