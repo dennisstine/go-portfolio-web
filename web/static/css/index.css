@@ -24,6 +24,7 @@
   content: "";
   display: block;
   position: absolute;
+  background-attachment: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -32,8 +33,11 @@
   opacity: 0.4;
 }
 
-
 @media only screen and (max-width: 600px) {
+  .hero::before {
+    background-size: 1200px;
+    background-attachment: fixed;
+  }
   #hero-header {
     margin-top: -2rem;
   }
@@ -92,7 +96,7 @@
 }
 
 .social:hover {
-  background-color: #93c54b;
+  background-color: #bcbcbc;
 }
 
 .social-facebook {
