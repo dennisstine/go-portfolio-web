@@ -44,7 +44,7 @@ $(function() {
       subject: 'Let me know why you\'re contacting me',
       text: 'More details go here'
     },
-    submitHandler: function(form) {
+    submitHandler: function() {
 
       $.ajax({
         url: '/messages',
@@ -52,20 +52,26 @@ $(function() {
         dataType: 'text',
         data: $("#contact-form").serialize(),
         success: function() {
-          $('#modal-success').toggleClass('is-active');
+          $('#modal-success').addClass('is-active');
+          setTimeout(function(){
+            $('#modal-success').removeClass('is-active');
+          }, 3000);
         },
         error: function() {
-          $('#modal-error').toggleClass('is-active');
+          $('#modal-error').addClass('is-active');
+          setTimeout(function(){
+            $('#modal-error').removeClass('is-active');
+          }, 3000);
         }
       });
     }
   });
 
   $('#close-success').click(function(e) {
-    $('#modal-success').toggleClass('is-active');
+    $('#modal-success').removeClass('is-active');
   });
 
   $('#close-error').click(function(e) {
-    $('#modal-error').toggleClass('is-active');
+    $('#modal-error').removeClass('is-active');
   });
 });
