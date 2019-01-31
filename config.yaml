@@ -4,3 +4,6 @@ links:
   linkedin: https://www.linkedin.com/in/dennisrstine
   github: https://github.com/dennisstine
   hackerrank: https://www.hackerrank.com/dennisstine
+aws:
+  function:
+    name: go-email-sender
