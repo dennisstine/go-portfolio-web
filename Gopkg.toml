@@ -24,6 +24,10 @@
 #   go-tests = true
 #   unused-packages = true
 
+[metadata.heroku]
+  root-package = "go-portfolio-web"
+  go-version = "go1.11.4"
+  install = [ "./..." ]
 
 [prune]
   go-tests = true
