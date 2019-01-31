@@ -7,13 +7,14 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 	"net/http"
+	"os"
 )
 
 var router *gin.Engine
 
 func setupRouter() *gin.Engine {
 
-	router := gin.Default()
+	router = gin.Default()
 	//router.Static("/static", "web/static")
 	router.Use(static.ServeRoot("/", "web/static"))
 	router.LoadHTMLGlob("web/templates/*")
@@ -58,7 +59,7 @@ func initLogger() {
 
 func initViper() {
 
-	viper.SetConfigName("socials")
+	viper.SetConfigName("config")
 	viper.AddConfigPath(".")
 	viper.AutomaticEnv()
 
@@ -81,5 +82,18 @@ func main() {
 
 	router := setupRouter()
 
-	router.Run(":8080")
+	port := os.Getenv("PORT")
+
+	if port == "" {
+		log.Warnf("$PORT not set. Defaulting to :8080")
+		port = ":8080"
+	} else {
+		port = ":" + port
+	}
+
+	err := router.Run(port)
+
+	if err != nil {
+		log.Fatal("Could not start")
+	}
 }
